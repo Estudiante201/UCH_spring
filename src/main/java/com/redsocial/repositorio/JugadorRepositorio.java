@@ -2,9 +2,9 @@ package com.redsocial.repositorio;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.redsocial.entidad.Concurso;
+import com.redsocial.entidad.Jugador;
 
-public interface ConcursoRepositorio extends JpaRepository<Concurso, Long> {
+public interface JugadorRepositorio extends JpaRepository<Jugador, Long> {
 
 
 	

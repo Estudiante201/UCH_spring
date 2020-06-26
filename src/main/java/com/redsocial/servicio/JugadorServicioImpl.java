@@ -5,24 +5,24 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.redsocial.entidad.Concurso;
-import com.redsocial.repositorio.ConcursoRepositorio;
+import com.redsocial.entidad.Jugador;
+import com.redsocial.repositorio.JugadorRepositorio;
 
 @Service
-public class ConcursoServicioImpl implements ConcursoServicio {
+public class JugadorServicioImpl implements JugadorServicio {
 
 	@Autowired
-	private ConcursoRepositorio repositorio;
+	private JugadorRepositorio repositorio;
 
 	@Override
-	public int eliminaConcurso(long id) {
+	public int eliminaJugador(long id) {
 		 repositorio.deleteById(id);
 		 return 0;
 	}
 
 	@Override
-	public int insertaConcurso(Concurso obj) {
-		Concurso objNuevo = repositorio.save(obj);
+	public int insertaJugador(Jugador obj) {
+		Jugador objNuevo = repositorio.save(obj);
 		if(objNuevo == null) {
 			return -1;
 		}else {
@@ -31,8 +31,8 @@ public class ConcursoServicioImpl implements ConcursoServicio {
 	}
 
 	@Override
-	public int actualizaConcurso(Concurso obj) {
-		Concurso objNuevo = repositorio.save(obj);
+	public int actualizaJugador(Jugador obj) {
+		Jugador objNuevo = repositorio.save(obj);
 		if(objNuevo == null) {
 			return -1;
 		}else {
@@ -41,7 +41,7 @@ public class ConcursoServicioImpl implements ConcursoServicio {
 	}
 
 	@Override
-	public List<Concurso> listaConcurso(String filtro) {
+	public List<Jugador> listaJugador(String filtro) {
 		return repositorio.findAll();
 	}
 
